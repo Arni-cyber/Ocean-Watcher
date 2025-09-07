@@ -1,0 +1,156 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    color: #e0ffff;
+}
+
+/* Banner (fica com a imagem atual) */
+.banner {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: cyan;
+}
+
+.banner h1 {
+    font-size: 4rem;
+    text-shadow: 0 0 15px cyan;
+}
+
+/* Corpo com GIF */
+main {
+    background: url("animation-beach-gif-ocean-Favim.com-1884119.gif") center/cover repeat;
+    padding: 0;
+    margin: 0;
+}
+
+/* Blocos de conteúdo ficam com fundo translúcido para destacar o texto */
+.descricao,
+.conteudo,
+.apoia-se {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    margin: 40px auto;
+    padding: 60px 20px;
+    width: 85%;
+}
+
+/* Títulos */
+.descricao h2,
+.conteudo h2,
+.apoia-se h2 {
+    color: cyan;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2rem;
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+    animation: brilho 2s infinite alternate;
+}
+
+/* Efeito glow animado nos títulos */
+@keyframes brilho {
+    from { text-shadow: 0 0 10px cyan; }
+    to { text-shadow: 0 0 25px cyan; }
+}
+
+/* Grid para texto + gráfico */
+.conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.conteudo .texto {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.conteudo .grafico {
+    background-color: rgba(0, 31, 36, 0.8);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: cyan;
+    font-style: italic;
+    height: 250px;
+    width: 500px;
+}
+
+.container-canvas {
+    display: flex;
+    justify-content: center;
+    width: 600px;
+    height: 250px;
+}
+
+/* Botão de Ongs */
+.ongs {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.card-ong {
+    background-color: rgba(0, 255, 255, 0.1);
+    border: 2px solid cyan;
+    border-radius: 15px;
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    color: #e0ffff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.card-ong h3 {
+    color: cyan;
+    margin-bottom: 10px;
+}
+
+.card-ong:hover {
+    background-color: rgba(0, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: cyan;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .banner h1 {
+        font-size: 2.5rem;
+    }
+
+    .conteudo {
+        grid-template-columns: 1fr; /* empilha texto + gráfico */
+    }
+
+    .conteudo .grafico {
+        width: 100%;
+        height: auto;
+    }
+
+    .container-canvas {
+        width: 100%;
+        height: auto;
+    }
+}
